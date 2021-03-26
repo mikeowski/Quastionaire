@@ -1,53 +1,79 @@
 <template>
-  <div>
-    <b-row align-v="center">
-      <b-col sm="2" align-self="center">
-        <typical
-          class="helloType"
-          :steps="[
-            'Hello',
-            1000,
-            'Hello world!',
-            500,
-            'Hello world! This is',
-            100,
-            'Hello world! This is Burak',
-            1000
-          ]"
-          :loop="Infinity"
-          :wrapper="'h1'"
-        ></typical>
-      </b-col>
+  <div class="welcome">
+    <b-container class="main-wrapper">
+      <b-navbar class="header">
+        <b-col class="text-center">
+          <typical
+            class="brandName"
+            :steps="[500, '?', 2000, 'Quastionaire']"
+            :wrapper="'h1'"
+          ></typical>
+        </b-col>
+      </b-navbar>
+      <b-row>
+        <b-col>
+          <b-container>
+            <starter />
+          </b-container>
+        </b-col>
+      </b-row>
+      <b-navbar fixed="bottom">
+        <b-nav-item disabled>
+          <b-col>
+            <typical
+              class="helloType"
+              :steps="[
+                '{',
+                1000,
+                '{Hello world!',
+                500,
+                '{Hello world! This is',
+                100,
+                '{Hello world! This is Burak}',
+                1000
+              ]"
+              :loop="Infinity"
+              :wrapper="'div'"
+            ></typical>
+          </b-col>
+        </b-nav-item>
 
-      <b-col sm="10" align-self="center">
-        <b-container>
-          <b-jumbotron
-            class="jumbotron"
-            header="BootstrapVue"
-            lead="Bootstrap v4 Components for Vue.js 2"
-          >
-            <p>For more information visit website</p>
-            <b-button variant="primary" href="#">More Info</b-button>
-          </b-jumbotron>
-        </b-container>
-      </b-col>
-    </b-row>
+        <b-nav-item class="ml-auto" disabled>
+          <b-col class="text-right">Made By Burak Mike ©</b-col>
+        </b-nav-item>
+      </b-navbar>
+    </b-container>
   </div>
 </template>
+
 <script>
 import typical from 'vue-typical'
-
+import Starter from '@/components/inComponents/starter'
 export default {
   components: {
+    Starter,
     typical
   }
 }
 </script>
 <style>
-body {
-  background-color: #151a23;
+.header {
+  height: 100px;
 }
+
+.brandName {
+  color: whitesmoke;
+}
+
 .helloType {
   color: #58c393;
+}
+
+.main-wrapper {
+  height: 100vh;
+}
+
+.welcome {
+  background-color: #181a1b;
 }
 </style>
