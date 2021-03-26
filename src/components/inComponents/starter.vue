@@ -5,7 +5,7 @@
         <b-col class="options">
           <h3>Select Category</h3>
           <b-form-select
-            class="bg-dark text-light"
+            class="bg-dark text-light border-light"
             v-model="selectedCategory"
             :options="categories"
           ></b-form-select>
@@ -32,7 +32,7 @@
         <b-col>
           <h3 class="text-center">Amount</h3>
           <b-form-spinbutton
-            id="demo-sb"
+            d="demo-sb"
             v-model="amount"
             min="10"
             max="50"

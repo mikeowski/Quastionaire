@@ -5,7 +5,7 @@
         <b-col class="text-center">
           <typical
             class="brandName"
-            :steps="[500, '?', 2000, 'Quastionaire']"
+            :steps="[500, '?', 1500, 'Quastionaire']"
             :wrapper="'h1'"
           ></typical>
         </b-col>
@@ -17,30 +17,35 @@
           </b-container>
         </b-col>
       </b-row>
-      <b-navbar fixed="bottom">
-        <b-nav-item disabled>
-          <b-col>
-            <typical
+      <b-navbar class="navBot" fixed="bottom">
+        <b-nav>
+          <b-col
+            ><b-link class="text-light" href="https://github.com/MahykBurak"
+              >My github page</b-link
+            >
+          </b-col>
+        </b-nav>
+        <b-nav class="ml-auto" disabled
+          ><b-col class="text-right"
+            ><typical
               class="helloType"
               :steps="[
+                ' ',
+                500,
                 '{',
                 1000,
-                '{Hello world!',
+                '{Made',
                 500,
-                '{Hello world! This is',
+                '{Made by',
                 100,
-                '{Hello world! This is Burak}',
+                '{Made by Burak Mike ©}',
                 1000
               ]"
               :loop="Infinity"
               :wrapper="'div'"
-            ></typical>
-          </b-col>
-        </b-nav-item>
-
-        <b-nav-item class="ml-auto" disabled>
-          <b-col class="text-right">Made By Burak Mike ©</b-col>
-        </b-nav-item>
+            ></typical
+          ></b-col>
+        </b-nav>
       </b-navbar>
     </b-container>
   </div>
@@ -66,7 +71,7 @@ export default {
 }
 
 .helloType {
-  color: #58c393;
+  color: navajowhite;
 }
 
 .main-wrapper {
@@ -75,5 +80,8 @@ export default {
 
 .welcome {
   background-color: #181a1b;
+}
+.navBot {
+  margin-bottom: 2px;
 }
 </style>
