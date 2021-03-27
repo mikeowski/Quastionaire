@@ -157,7 +157,6 @@ export default {
   margin-bottom: 1.5px;
 }
 .selectedAnswer {
-  background-color: #83b5c8;
   color: #4da9c8;
 }
 .correctAnswer {
