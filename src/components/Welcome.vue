@@ -5,7 +5,14 @@
         <b-col class="text-center">
           <typical
             class="brandName"
-            :steps="[500, '?', 1500, 'Quastionaire']"
+            :steps="[
+              1000,
+              'Welcome 👋',
+              1500,
+              'Are you Ready?',
+              1000,
+              'Quastionaire'
+            ]"
             :wrapper="'h1'"
           ></typical>
         </b-col>

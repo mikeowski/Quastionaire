@@ -1,5 +1,13 @@
 export default {
+  defaultApi: 'https://opentdb.com/api.php?type=multiple',
   isStart: false,
+  isFinished: false,
+  currentAmount: 10,
+  selectedCategory: null,
+  questionNumber: null,
+  difficulty: null,
+  questions: [],
+  answers: [],
   categories: [
     { value: null, text: 'Random' },
     { value: '&category=9', text: 'General Knowledge' },
@@ -26,10 +34,5 @@ export default {
     { value: '&category=30', text: 'Science : Gadgets' },
     { value: '&category=31', text: 'Entertainment: Japanese Anime & Manga' },
     { value: '&category=32', text: 'Entertainment: Cartoon & Animations' }
-  ],
-  currentAmount: 10,
-  currentCategory: null,
-  questionNumber: null,
-  questions: [],
-  answers: []
+  ]
 }

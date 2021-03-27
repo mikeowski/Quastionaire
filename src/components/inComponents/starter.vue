@@ -13,16 +13,32 @@
         <b-col align-self="center" class="options">
           <h3>Select Difficulty</h3>
           <b-button-group>
-            <b-button class="diffBtn" variant="primary" @click="setDifficult(0)"
-              >Any Difficulty</b-button
-            >
-            <b-button class="diffBtn" variant="success" @click="setDifficult(1)"
-              >Easy</b-button
-            >
-            <b-button class="diffBtn" variant="warning" @click="setDifficult(2)"
+            <b-button
+              class="diffBtn"
+              size="sm"
+              variant="primary"
+              @click="setDifficult(0)"
+              >Any Difficulty
+            </b-button>
+            <b-button
+              class="diffBtn"
+              size="sm"
+              variant="success"
+              @click="setDifficult(1)"
+              >Easy
+            </b-button>
+            <b-button
+              class="diffBtn"
+              size="sm"
+              variant="warning"
+              @click="setDifficult(2)"
               >Medium
             </b-button>
-            <b-button class="diffBtn" variant="danger" @click="setDifficult(3)"
+            <b-button
+              class="diffBtn"
+              size="sm"
+              variant="danger"
+              @click="setDifficult(3)"
               >Difficult
             </b-button>
           </b-button-group>
@@ -30,17 +46,17 @@
       </b-row>
       <b-row class="options" id="setAmount">
         <b-col>
-          <h3 class="text-center">Amount</h3>
+          <h3 class="text-center">Number of Question</h3>
           <b-form-spinbutton
             d="demo-sb"
-            v-model="amount"
+            v-model="currentAmount"
             min="10"
             max="50"
           ></b-form-spinbutton>
         </b-col>
       </b-row>
       <b-row class="startButton" align-h="center">
-        <b-button variant="outline-info" href="#"><h2>Start</h2></b-button>
+        <b-button @click="$store.commit('starter',{selectedCategory,difficulty,currentAmount})" variant="outline-info" href="#"><h2>Start</h2></b-button>
       </b-row>
     </b-jumbotron>
   </div>
@@ -48,17 +64,19 @@
 0
 <script>
 import { mapState } from 'vuex'
+import {mapMutations} from 'vuex'
 
 export default {
   data() {
     return {
       selectedCategory: null,
       difficulty: 0,
-      amount: 10
+      currentAmount: 10
     }
   },
   computed: {
-    ...mapState(['categories'])
+    ...mapState(['categories']),
+    ...mapMutations(['starter'])
   },
   methods: {
     setDifficult(difficulty) {
@@ -72,15 +90,19 @@ export default {
 .startButton {
   padding-top: 50px;
 }
+
 .diffBtn {
-  margin: 0 3px;
+  margin: 0 5px;
 }
+
 .options {
   padding: 30px;
 }
+
 .options h3 {
   color: whitesmoke;
 }
+
 #setAmount {
   width: 300px;
   margin: auto;
