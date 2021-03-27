@@ -17,28 +17,28 @@
               class="diffBtn"
               size="sm"
               variant="primary"
-              @click="setDifficult(0)"
+              @click="setDifficult(null)"
               >Any Difficulty
             </b-button>
             <b-button
               class="diffBtn"
               size="sm"
               variant="success"
-              @click="setDifficult(1)"
+              @click="setDifficult('easy')"
               >Easy
             </b-button>
             <b-button
               class="diffBtn"
               size="sm"
               variant="warning"
-              @click="setDifficult(2)"
+              @click="setDifficult('medium')"
               >Medium
             </b-button>
             <b-button
               class="diffBtn"
               size="sm"
               variant="danger"
-              @click="setDifficult(3)"
+              @click="setDifficult('hard')"
               >Difficult
             </b-button>
           </b-button-group>
@@ -56,7 +56,18 @@
         </b-col>
       </b-row>
       <b-row class="startButton" align-h="center">
-        <b-button @click="$store.commit('starter',{selectedCategory,difficulty,currentAmount})" variant="outline-info" href="#"><h2>Start</h2></b-button>
+        <b-button
+          @click="
+            $store.dispatch('starter', {
+              selectedCategory,
+              difficulty,
+              currentAmount
+            })
+          "
+          variant="outline-info"
+          href="#"
+          ><h2>Start</h2></b-button
+        >
       </b-row>
     </b-jumbotron>
   </div>
@@ -64,19 +75,16 @@
 0
 <script>
 import { mapState } from 'vuex'
-import {mapMutations} from 'vuex'
-
 export default {
   data() {
     return {
       selectedCategory: null,
-      difficulty: 0,
+      difficulty: null,
       currentAmount: 10
     }
   },
   computed: {
-    ...mapState(['categories']),
-    ...mapMutations(['starter'])
+    ...mapState(['categories'])
   },
   methods: {
     setDifficult(difficulty) {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Welcome v-if='!isStart && !isFinished'/>
-    <Question v-if='isStart && !isFinished'/>
+    <Welcome v-if="!isStart && !isFinished" />
+    <Question v-if="isStart && !isFinished" :currentQuesitons="getQuestions" />
   </div>
 </template>
 
@@ -16,9 +16,16 @@ export default {
     Question,
     Welcome
   },
-  computed:{
-    ...mapState(['isStart','isFinished'])
+  computed: {
+    ...mapState(['isStart', 'isFinished']),
+    getQuestions() {
+      return this.$store.state.questions
+    }
   }
 }
 </script>
-<style></style>
+<style>
+#app{
+  background-color: #151a23;
+}
+</style>

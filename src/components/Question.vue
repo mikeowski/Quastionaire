@@ -1,41 +1,48 @@
 <template>
-  <div class='Question'>
-    <b-container class='main-wrapper'>
-      <b-navbar class='header'>
-        <b-col class='text-center'>
+  <div class="Question">
+    <b-container class="main-wrapper">
+      <b-navbar class="header">
+        <b-col class="text-center">
           <typical
-            class='brandName'
+            class="brandName"
             :steps="[
-              500,'?',1500,
-              'Quastionaire'
+              500,
+              '?',
+              1500,
+              'Quastionaire',
+              1000,
+              'Have a Luck 👍',
+              2000,
+              'Quastionaire',10000
             ]"
             :wrapper="'h1'"
+            :loop="Infinity"
           ></typical>
         </b-col>
       </b-navbar>
       <b-row>
         <b-col>
           <b-container>
-            <question-box />
+            <question-box
+              :nextQuestion="nextQuestion"
+              :currentQuestion="currentQuesitons[currentIndex]"
+              :currentIndex='currentIndex'
+            />
           </b-container>
         </b-col>
       </b-row>
-      <b-navbar class='navBot' fixed='bottom'>
+      <b-navbar class="navBot" fixed="bottom">
         <b-nav>
-          <b-col
-          >
-            <b-link class='text-light' href='https://github.com/MahykBurak'
-            >My github page
-            </b-link
-            >
+          <b-col>
+            <b-link class="text-light" href="https://github.com/MahykBurak"
+              >My github page
+            </b-link>
           </b-col>
         </b-nav>
-        <b-nav class='ml-auto' disabled
-        >
-          <b-col class='text-right'
-          >
+        <b-nav class="ml-auto" disabled>
+          <b-col class="text-right">
             <typical
-              class='helloType'
+              class="helloType"
               :steps="[
                 ' ',
                 500,
@@ -48,10 +55,8 @@
                 '{Made by Burak Mike ©}',
                 1000
               ]"
-              :loop='Infinity'
               :wrapper="'div'"
-            ></typical
-            >
+            ></typical>
           </b-col>
         </b-nav>
       </b-navbar>
@@ -62,11 +67,23 @@
 <script>
 import typical from 'vue-typical'
 import QuestionBox from '@/components/inComponents/questionBox'
-
 export default {
+  props: {
+    currentQuesitons: Array
+  },
+  data() {
+    return {
+      currentIndex: 0
+    }
+  },
   components: {
     QuestionBox,
     typical
+  },
+  methods: {
+    nextQuestion() {
+      this.currentIndex++
+    }
   }
 }
 </script>
@@ -88,7 +105,7 @@ export default {
 }
 
 .Question {
-  background-color: #181a1b;
+  background-color: #151a23;
 }
 
 .navBot {

@@ -1,13 +1,11 @@
 export default {
-  defaultApi: 'https://opentdb.com/api.php?type=multiple',
+  defaultApi: 'https://opentdb.com/api.php?type=multiple&amount=10',
   isStart: false,
   isFinished: false,
-  currentAmount: 10,
-  selectedCategory: null,
-  questionNumber: null,
-  difficulty: null,
   questions: [],
-  answers: [],
+  correctAnswers: 0,
+  wrongAnswers: 0,
+  passedQuestions: 0,
   categories: [
     { value: null, text: 'Random' },
     { value: '&category=9', text: 'General Knowledge' },
