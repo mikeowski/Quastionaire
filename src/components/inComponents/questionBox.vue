@@ -2,8 +2,8 @@
   <div>
     <b-jumbotron class="bg-dark">
       <b-row align-h="center">
-        <b-container fluid='true' class='question'
-          ><div
+        <b-container fluid="true" class="question">
+          <div
             :class="
               currentQuestion.difficulty === 'hard'
                 ? 'hardQuestion'
@@ -13,19 +13,21 @@
             "
           >
             {{ encodedQuestion }}
-          </div></b-container
-        >
+          </div>
+        </b-container>
       </b-row>
+      <hr class="my-4" />
       <b-row align-h="center" class="answers">
         <b-list-group>
-            <b-list-group-item
-              class=""
-              v-for="(answer, index) in shuffledAnswers"
-              :key="index"
-              @click="selectIndex(index)"
-            >
-              {{ answer }}
-            </b-list-group-item>
+          <b-list-group-item
+            v-for="(answer, index) in shuffledAnswers"
+            :key="index"
+            :class="answerClass(index)"
+            @click="selectIndex(index)"
+            :disabled="isAnswered"
+          >
+            {{ answer }}
+          </b-list-group-item>
         </b-list-group>
       </b-row>
       <b-row align-h="center">
@@ -33,7 +35,7 @@
           class="Selectbtn"
           @click="submitAnswer"
           variant="outline-success"
-          :disabled="isAnswered"
+          :disabled="isAnswered || selectedIndex === null"
           >Submit Answer
         </b-button>
         <b-button
@@ -89,6 +91,7 @@ export default {
           .replace(/(&#039;)/g, "'")
           .replace(/(&quot;)/g, '"')
           .replace(/(&amp;)/g, '&')
+          .replace(/(&eacute;)/g, 'é')
       })
     },
     selectIndex(index) {
@@ -99,6 +102,16 @@ export default {
       if (this.selectedIndex == this.correctIndex) isCorrect = true
       this.isAnswered = true
       this.$store.commit('resultUpdater', isCorrect)
+    },
+    answerClass(index) {
+      let aclass = ''
+      if (this.selectedIndex === index && !this.isAnswered)
+        aclass = 'selectedAnswer'
+      else if (this.isAnswered && index == this.correctIndex)
+        aclass = 'bg-success text-light'
+      else if (this.isAnswered && this.selectedIndex == index)
+        aclass = 'bg-danger text-light'
+      return aclass
     }
   },
   watch: {
@@ -109,9 +122,10 @@ export default {
           .replace(/(&#039;)/g, "'")
           .replace(/(&quot;)/g, '"')
           .replace(/(&amp;)/g, '&')
+          .replace(/(&eacute;)/g, 'é')
         this.selectedIndex = null
-        this.shuffleAnswers()
         this.correctIndex = null
+        this.shuffleAnswers()
         this.isAnswered = false
       }
     }
@@ -122,20 +136,39 @@ export default {
 <style>
 .answers {
   margin: 40px;
+  font-min-size: 16px;
+  font-max-size: 20px;
 }
+
 .Selectbtn {
-  margin: 0 30px;
+  margin: 5px 30px;
 }
-.question{
+
+.question {
+  padding: 0 25px;
   font-size: 24px;
 }
-.list-group-item:hover{
-  background:rgb(223, 230, 231);
+
+.list-group-item:hover {
+  background: rgb(223, 230, 231);
   cursor: pointer;
 }
-.list-group{
- color: #27354c;
+.list-group-item {
+  margin-bottom: 1.5px;
 }
+.selectedAnswer {
+  background-color: #83b5c8;
+  color: #4da9c8;
+}
+.correctAnswer {
+  border: 3px solid rgb(76, 172, 76);
+  color: black;
+}
+.wrongAnswer {
+  border: 3px solid rgb(194, 73, 73);
+  color: black !important;
+}
+
 .hardQuestion {
   color: #e35f5f;
 }

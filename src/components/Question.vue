@@ -13,7 +13,8 @@
               1000,
               'Have a Luck 👍',
               2000,
-              'Quastionaire',10000
+              'Quastionaire',
+              10000
             ]"
             :wrapper="'h1'"
             :loop="Infinity"
@@ -26,7 +27,7 @@
             <question-box
               :nextQuestion="nextQuestion"
               :currentQuestion="currentQuesitons[currentIndex]"
-              :currentIndex='currentIndex'
+              :currentIndex="currentIndex"
             />
           </b-container>
         </b-col>

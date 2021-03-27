@@ -7,6 +7,5 @@ export default {
     if (payload != 'pass')
       payload ? state.correctAnswers++ : state.wrongAnswers++
     else state.passedQuestions++
-    console.log('çalıştı')
   }
 }
