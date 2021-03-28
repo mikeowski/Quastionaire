@@ -106,7 +106,7 @@ export default {
 }
 
 .Question {
-  background-color: #151a23;
+  background-color: #242C3A;
 }
 
 .navBot {

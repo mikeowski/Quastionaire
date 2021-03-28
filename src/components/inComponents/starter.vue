@@ -1,11 +1,21 @@
 <template>
   <div>
-    <b-jumbotron class="jumbotron" bg-variant="dark">
+    <b-jumbotron
+      style="
+        background-color: #151a23;
+        box-shadow: 5px 10px;
+        border-radius: 12px;
+      "
+    >
       <b-row>
         <b-col class="options">
           <h3>Select Category</h3>
           <b-form-select
-            class="bg-dark text-light border-light"
+            style="
+              background-color: #151a23;
+              color: whitesmoke;
+              border: 0.3px solid #333739;
+            "
             v-model="selectedCategory"
             :options="categories"
           ></b-form-select>
@@ -15,29 +25,33 @@
           <b-button-group>
             <b-button
               class="diffBtn"
+              id="any_diff"
               size="sm"
-              variant="primary"
+              variant="outline-primary"
               @click="setDifficult(null)"
               >Any Difficulty
             </b-button>
             <b-button
               class="diffBtn"
+              id="easy_diff"
               size="sm"
-              variant="success"
+              variant="outline-success"
               @click="setDifficult('easy')"
               >Easy
             </b-button>
             <b-button
               class="diffBtn"
+              id="medium_diff"
               size="sm"
-              variant="warning"
+              variant="outline-warning"
               @click="setDifficult('medium')"
               >Medium
             </b-button>
             <b-button
               class="diffBtn"
+              id="hard_diff"
               size="sm"
-              variant="danger"
+              variant="outline-danger"
               @click="setDifficult('hard')"
               >Difficult
             </b-button>
@@ -48,7 +62,8 @@
         <b-col>
           <h3 class="text-center">Number of Question</h3>
           <b-form-spinbutton
-            d="demo-sb"
+            d="amount-selecter"
+            style="background-color: whitesmoke"
             v-model="currentAmount"
             min="10"
             max="50"
@@ -102,7 +117,26 @@ export default {
 .diffBtn {
   margin: 0 5px;
 }
-
+#any_diff:focus {
+  background-color: #007bff;
+  color: whitesmoke;
+  box-shadow: 1px 1px #528bd6;
+}
+#easy_diff:focus {
+  background-color: #28a745;
+  color: whitesmoke;
+  box-shadow: 1px 1px #47bc5d;
+}
+#medium_diff:focus {
+  background-color: #ffc107;
+  color: whitesmoke;
+  box-shadow: 1px 1px #d6b85e;
+}
+#hard_diff:focus {
+  background-color: #dc3545;
+  color: whitesmoke;
+  box-shadow: 1px 1px #d65d69;
+}
 .options {
   padding: 30px;
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-jumbotron class="bg-dark">
+    <b-jumbotron style='background-color: #151a23; box-shadow: 5px 10px; border-radius: 12px'>
       <b-row align-h="center">
         <b-container fluid="true" class="question">
           <div
@@ -16,7 +16,7 @@
           </div>
         </b-container>
       </b-row>
-      <hr class="my-4" />
+      <hr class="my-4" style='background-color: #2d4564' />
       <b-row align-h="center" class="answers">
         <b-list-group>
           <b-list-group-item
