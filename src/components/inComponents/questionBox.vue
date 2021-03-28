@@ -103,6 +103,7 @@ export default {
           .replace(/(&ldquo;)/g, '“')
           .replace(/(&hellip;)/g, '...')
           .replace(/(&rdquo;)/g, '”')
+          .replace(/(&rsquo;)/g, '’')
       })
     },
     selectIndex(index) {
@@ -137,6 +138,7 @@ export default {
           .replace(/(&ldquo;)/g, '“')
           .replace(/(&hellip;)/g, '...')
           .replace(/(&rdquo;)/g, '”')
+          .replace(/(&rsquo;)/g, '’')
         this.selectedIndex = null
         this.correctIndex = null
         this.shuffleAnswers()
