@@ -7,7 +7,7 @@
 
 Quastionaire is a quastion app which you can choose category and difficulty 
 
-## Live Demo: https://vercel.com/mahykburak/quastionaire
+## Live Demo: https://quastionaire.vercel.app/
 
 ## Used Tecnologies
 - Vercel(Hosting)
