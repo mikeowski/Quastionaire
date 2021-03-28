@@ -32,7 +32,7 @@
           </b-container>
         </b-col>
       </b-row>
-      <b-navbar class="navBot" fixed="bottom">
+      <b-row class="navBot" fixed="bottom">
         <b-nav>
           <b-col>
             <b-link class="text-light" href="https://github.com/MahykBurak"
@@ -60,7 +60,7 @@
             ></typical>
           </b-col>
         </b-nav>
-      </b-navbar>
+      </b-row>
     </b-container>
   </div>
 </template>
