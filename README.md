@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/Version-0.0.1-blue.svg)](https://github.com/MahykBurak/quiz-app-vue)
 # Quastionaire 
 
-## Live Demo: https://quiz-app-vue.vercel.app/
+## Live Demo: https://quastionaire.vercel.app/
 ## Project setup
 ```
 npm install
