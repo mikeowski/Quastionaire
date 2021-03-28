@@ -3,10 +3,8 @@
 [![MIT licence](https://img.shields.io/badge/licance-MIT-red.svg)](https://github.com/MahykBurak/quiz-app-vue/blob/master/LICENSE)
 [![Version](https://img.shields.io/badge/Version-0.0.1-blue.svg)](https://github.com/MahykBurak/quiz-app-vue)
 # Quastionaire
-##Live Demo:
-```
-https://quiz-app-vue.vercel.app/ 
-```
+##Live Demo: https://quiz-app-vue.vercel.app/ 
+
 
 ## Project setup
 ```
