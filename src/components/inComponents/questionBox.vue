@@ -22,6 +22,8 @@
           <b-list-group-item
             v-for="(answer, index) in shuffledAnswers"
             :key="index"
+            id='question-list'
+            style=' background-color: #181A1B;'
             :class="answerClass(index)"
             @click="selectIndex(index)"
             :disabled="isAnswered"
@@ -145,7 +147,10 @@ export default {
   font-min-size: 16px;
   font-max-size: 20px;
 }
-
+#question-list:focus{
+  background-color:red;
+  border: 2px solid #4da9c8;
+}
 .Selectbtn {
   margin: 5px 30px;
 }
@@ -156,12 +161,14 @@ export default {
 }
 
 .list-group-item:hover {
-  background: rgb(223, 230, 231);
+  box-shadow: 0.5px 0.5px #8c8787;
   cursor: pointer;
 }
 
-.list-group-item {
+.list-group-item{
   margin-bottom: 1.5px;
+  border: 1px solid #8c8787;
+  background-color: #181A1B; color: whitesmoke
 }
 
 .selectedAnswer {
@@ -171,6 +178,7 @@ export default {
 .correctAnswer {
   border: 3px solid rgb(76, 172, 76);
   color: black;
+
 }
 
 .wrongAnswer {
