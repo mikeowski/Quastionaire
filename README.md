@@ -1,5 +1,7 @@
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/MahykBurak/quiz-app-vue/issues)
+[![MIT licence](https://img.shields.io/badge/licance-MIT-red.svg)](https://github.com/MahykBurak/quiz-app-vue/blob/master/LICENSE)
 # Quastionaire
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/MahykBurak/quiz-app-vue/issues) [![HitCount](http://hits.dwyl.com/MahykBurak/quiz-app-vue.svg)](http://hits.dwyl.com/MahykBurak/quiz-app-vue)
 ##Live Demo:
 ```
 https://quiz-app-vue.vercel.app/ 
@@ -19,4 +21,4 @@ npm run serve
 ```
 npm run build
 ```
-
+[![HitCount](http://hits.dwyl.com/MahykBurak/MahykBurak/quiz-app-vuegit.svg)](http://hits.dwyl.com/MahykBurak/MahykBurak/quiz-app-vuegit)
