@@ -10,7 +10,7 @@ Quastionaire is a quastion app which you can choose category and difficulty
 ## Used Tecnologies
 - Vercel(Hosting)
 - Vue.js
-- bootstrap 
+- Bootstrap 
 - Opentdb API (For getting questions)
 
 ## Install
