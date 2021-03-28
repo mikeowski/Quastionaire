@@ -92,6 +92,9 @@ export default {
           .replace(/(&quot;)/g, '"')
           .replace(/(&amp;)/g, '&')
           .replace(/(&eacute;)/g, 'é')
+          .replace(/(&ldquo;)/g, '“')
+          .replace(/(&hellip;)/g, '...')
+          .replace(/(&rdquo;)/g, '”')
       })
     },
     selectIndex(index) {
@@ -123,6 +126,9 @@ export default {
           .replace(/(&quot;)/g, '"')
           .replace(/(&amp;)/g, '&')
           .replace(/(&eacute;)/g, 'é')
+          .replace(/(&ldquo;)/g, '“')
+          .replace(/(&hellip;)/g, '...')
+          .replace(/(&rdquo;)/g, '”')
         this.selectedIndex = null
         this.correctIndex = null
         this.shuffleAnswers()
@@ -133,7 +139,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .answers {
   margin: 40px;
   font-min-size: 16px;
@@ -153,16 +159,20 @@ export default {
   background: rgb(223, 230, 231);
   cursor: pointer;
 }
+
 .list-group-item {
   margin-bottom: 1.5px;
 }
+
 .selectedAnswer {
   color: #4da9c8;
 }
+
 .correctAnswer {
   border: 3px solid rgb(76, 172, 76);
   color: black;
 }
+
 .wrongAnswer {
   border: 3px solid rgb(194, 73, 73);
   color: black !important;
