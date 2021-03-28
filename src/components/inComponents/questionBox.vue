@@ -1,6 +1,12 @@
 <template>
   <div>
-    <b-jumbotron style='background-color: #151a23; box-shadow: 5px 10px; border-radius: 12px'>
+    <b-jumbotron
+      style="
+        background-color: #151a23;
+        box-shadow: 5px 10px;
+        border-radius: 12px;
+      "
+    >
       <b-row align-h="center">
         <b-container fluid="true" class="question">
           <div
@@ -16,14 +22,14 @@
           </div>
         </b-container>
       </b-row>
-      <hr class="my-4" style='background-color: #2d4564' />
+      <hr class="my-4" style="background-color: #2d4564" />
       <b-row align-h="center" class="answers">
         <b-list-group>
           <b-list-group-item
             v-for="(answer, index) in shuffledAnswers"
             :key="index"
-            id='question-list'
-            style=' background-color: #181A1B;'
+            id="question-list"
+            style="background-color: #181a1b"
             :class="answerClass(index)"
             @click="selectIndex(index)"
             :disabled="isAnswered"
@@ -147,8 +153,8 @@ export default {
   font-min-size: 16px;
   font-max-size: 20px;
 }
-#question-list:focus{
-  background-color:red;
+#question-list:focus {
+  background-color: red;
   border: 2px solid #4da9c8;
 }
 .Selectbtn {
@@ -165,10 +171,11 @@ export default {
   cursor: pointer;
 }
 
-.list-group-item{
+.list-group-item {
   margin-bottom: 1.5px;
   border: 1px solid #8c8787;
-  background-color: #181A1B; color: whitesmoke
+  background-color: #181a1b;
+  color: whitesmoke;
 }
 
 .selectedAnswer {
@@ -178,7 +185,6 @@ export default {
 .correctAnswer {
   border: 3px solid rgb(76, 172, 76);
   color: black;
-
 }
 
 .wrongAnswer {
