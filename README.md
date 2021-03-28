@@ -1,4 +1,9 @@
-# quiz-app-vue
+# Quastionaire
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/MahykBurak/quiz-app-vue/issues) [![HitCount](http://hits.dwyl.com/MahykBurak/quiz-app-vue.svg)](http://hits.dwyl.com/MahykBurak/quiz-app-vue)
+##Live Demo:
+```
+https://quiz-app-vue.vercel.app/ 
+```
 
 ## Project setup
 ```
@@ -15,10 +20,3 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
