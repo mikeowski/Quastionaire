@@ -1,6 +1,7 @@
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/MahykBurak/quiz-app-vue/issues)
 [![MIT licence](https://img.shields.io/badge/licance-MIT-red.svg)](https://github.com/MahykBurak/quiz-app-vue/blob/master/LICENSE)
+[![Version](https://img.shields.io/badge/Version-0.0.1-blue.svg)](https://github.com/MahykBurak/quiz-app-vue)
 # Quastionaire
 ##Live Demo:
 ```
