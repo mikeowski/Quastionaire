@@ -45,6 +45,7 @@
           variant="outline-success"
           :disabled="isAnswered || selectedIndex === null"
           >Submit Answer
+          <ph-check-square :size="24" weight="bold" />
         </b-button>
         <b-button
           class="Selectbtn"
@@ -52,6 +53,10 @@
           variant="outline-primary"
           :disabled="currentIndex == $store.state.questions.length - 1"
           >Next Question
+          <ph-arrow-square-right
+            size="24"
+            weight="bold"
+          ></ph-arrow-square-right>
         </b-button>
       </b-row>
     </b-jumbotron>
@@ -59,7 +64,7 @@
 </template>
 
 <script>
-//import typical from 'vue-typical'
+import { PhArrowSquareRight, PhCheckSquare } from 'phosphor-vue'
 import { mapState } from 'vuex'
 import lodash from 'lodash'
 
@@ -79,7 +84,8 @@ export default {
     }
   },
   components: {
-    //typical
+    PhArrowSquareRight,
+    PhCheckSquare
   },
   computed: {
     ...mapState(['questions'])

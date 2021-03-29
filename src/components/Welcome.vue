@@ -86,7 +86,7 @@ export default {
 }
 
 .welcome {
-  background-color: #242C3A;
+  background-color: #242c3a;
 }
 .navBot {
   margin-bottom: 2px;

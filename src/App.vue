@@ -26,13 +26,13 @@ export default {
 </script>
 <style>
 #app {
-  background-color: #242C3A;
-
+  background-color: #242c3a;
 }
-body, html {
+body,
+html {
   padding: 0;
   margin: 0;
-  background-color: #242C3A;
+  background-color: #242c3a;
   width: 100% !important;
   min-height: 100vh !important;
 }
