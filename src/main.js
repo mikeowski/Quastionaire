@@ -1,5 +1,4 @@
 import Vue from 'vue'
-require('dotenv').config({ path: '.env' })
 import App from './App.vue'
 import './registerServiceWorker'
 import store from './store'
