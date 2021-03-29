@@ -62,7 +62,7 @@
           class="Selectbtn"
           @click="finish"
           variant="outline-danger"
-          v-if="(currentIndex === $store.state.questions.length - 1)"
+          v-if="currentIndex === $store.state.questions.length - 1"
           >Finish
           <ph-flag :size="24" weight="bold" />
         </b-button>
@@ -73,7 +73,7 @@
 
 <script>
 import { PhArrowSquareRight, PhCheckSquare, PhFlag } from 'phosphor-vue'
-import { mapState,mapActions} from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import lodash from 'lodash'
 
 export default {
@@ -97,7 +97,7 @@ export default {
     PhFlag
   },
   computed: {
-    ...mapState(['questions']),
+    ...mapState(['questions'])
   },
   methods: {
     ...mapActions({ actionFinisher: 'finisher' }),
