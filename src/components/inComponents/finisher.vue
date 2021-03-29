@@ -28,6 +28,7 @@
             <b-row style="text-align: center" class='mb-2'>
               <b-col>
                 <typical
+                  v-if='flipped'
                   class="correctAnswer"
                   :steps="[500, 'Correct Answers:']"
                   :wrapper="'div'"
@@ -41,8 +42,9 @@
             <b-row style="text-align: center">
               <b-col>
                 <typical
+                  v-if='flipped'
                   class="wrongAnswer"
-                  :steps="[500, 'Correct Answers:']"
+                  :steps="[500, 'Wrong Answers:']"
                   :wrapper="'div'"
                 ></typical>
               </b-col>
@@ -54,23 +56,14 @@
             <b-row style="text-align: center">
               <b-col>
                 <typical
+                  v-if='flipped'
                   class="passed"
-                  :steps="[500, 'Correct Answers:']"
+                  :steps="[500, 'Passed Answers:']"
                   :wrapper="'div'"
                 ></typical>
               </b-col>
               <b-col class="passed"> {{ passed }}</b-col>
             </b-row>
-          </b-container>
-          <b-container>
-            <div style='width: auto; text-align: center; margin-top:  100px'>
-              <typical
-                class="clickMessage"
-                :steps="[1000, 'Click and get your gif']"
-                :loop="Infinity"
-                :wrapper="'h2'"
-              ></typical>
-            </div>
           </b-container>
         </div>
 
@@ -82,7 +75,23 @@
         </div>
       </flipper>
     </b-container>
-    <b-row align-h='center' class='mt-5'>
+    <b-row align-h='center' class='mt-5 p-3'>
+      <b-container style='margin-bottom: 15px'>
+        <div style='width: auto; text-align: center;'>
+          <typical
+            class="clickMessage"
+            :steps="[
+              500,
+              'Click Gif',
+              500,
+              'Click Gif and See Your Results',
+              1500
+            ]"
+            :wrapper="'h1'"
+            :loop="Infinity"
+          ></typical>
+        </div>
+      </b-container>
       <b-button @click='$store.commit("reloader")' variant="outline-info">Try it Again!!!</b-button>
     </b-row>
   </div>
@@ -143,7 +152,7 @@ export default {
   color: #c81f1f;
 }
 .clickMessage {
-  color: #a51313;
+  color: #e06060;
   font-size: 1rem;
 }
 .img{

@@ -1,3 +1,4 @@
+require('dotenv').config()
 export default {
   starter({ commit }, payload) {
     //prepared APİ
@@ -23,7 +24,7 @@ export default {
 
   finisher({ commit }, payload) {
     let result = payload
-    const api_key = 'IuYo7KhLIsjZPrrpNArARTThyur4lb91'
+    const api_key = process.env.GIPHY_API_KEY
     const api = `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${result}&rating=pg-13&limit=10`
     fetch(api, {
       method: 'get'
