@@ -74,7 +74,7 @@ export default {
   },
   data() {
     return {
-      currentIndex: 0
+      currentIndex: 0,
     }
   },
   components: {
@@ -84,11 +84,12 @@ export default {
   methods: {
     nextQuestion() {
       this.currentIndex++
+
     }
   }
 }
 </script>
-<style>
+<style scoped>
 .header {
   height: 100px;
 }
@@ -101,9 +102,7 @@ export default {
   color: navajowhite;
 }
 
-.main-wrapper {
-  height: 100vh;
-}
+
 
 .Question {
   background-color: #242c3a;

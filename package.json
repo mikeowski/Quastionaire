@@ -17,6 +17,7 @@
     "phosphor-vue": "^1.2.1",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.12",
+    "vue-flipper": "^1.0.0",
     "vue-typical": "^1.6.2",
     "vuex": "^3.4.0"
   },

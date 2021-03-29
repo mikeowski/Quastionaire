@@ -51,12 +51,20 @@
           class="Selectbtn"
           @click="nextQuestion"
           variant="outline-primary"
-          :disabled="currentIndex == $store.state.questions.length - 1"
+          v-if="!(currentIndex === $store.state.questions.length - 1)"
           >Next Question
           <ph-arrow-square-right
             size="24"
             weight="bold"
           ></ph-arrow-square-right>
+        </b-button>
+        <b-button
+          class="Selectbtn"
+          @click="finish"
+          variant="outline-danger"
+          v-if="(currentIndex === $store.state.questions.length - 1)"
+          >Finish
+          <ph-flag :size="24" weight="bold" />
         </b-button>
       </b-row>
     </b-jumbotron>
@@ -64,8 +72,8 @@
 </template>
 
 <script>
-import { PhArrowSquareRight, PhCheckSquare } from 'phosphor-vue'
-import { mapState } from 'vuex'
+import { PhArrowSquareRight, PhCheckSquare, PhFlag } from 'phosphor-vue'
+import { mapState,mapActions} from 'vuex'
 import lodash from 'lodash'
 
 export default {
@@ -85,12 +93,14 @@ export default {
   },
   components: {
     PhArrowSquareRight,
-    PhCheckSquare
+    PhCheckSquare,
+    PhFlag
   },
   computed: {
-    ...mapState(['questions'])
+    ...mapState(['questions']),
   },
   methods: {
+    ...mapActions({ actionFinisher: 'finisher' }),
     shuffleAnswers() {
       let answers = [
         ...this.currentQuestion.incorrect_answers,
@@ -131,6 +141,17 @@ export default {
       else if (this.isAnswered && this.selectedIndex == index)
         aclass = 'bg-danger text-light'
       return aclass
+    },
+    finish() {
+      let correctAnswers = this.$store.state.correctAnswers
+      let qLength = this.$store.state.questions.length
+      let result
+      correctAnswers >= (qLength * 70) / 100
+        ? (result = 'good-job')
+        : correctAnswers >= qLength / 2
+        ? (result = 'not-bad')
+        : (result = 'bad-job')
+      this.actionFinisher(result)
     }
   },
   watch: {
