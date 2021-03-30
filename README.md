@@ -1,7 +1,7 @@
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/MahykBurak/quiz-app-vue/issues)
 [![MIT licence](https://img.shields.io/badge/licance-MIT-red.svg)](https://github.com/MahykBurak/quiz-app-vue/blob/master/LICENSE)
-[![Version](https://img.shields.io/badge/Version-0.1.3-blue.svg)](https://github.com/MahykBurak/quiz-app-vue)
+[![Version](https://img.shields.io/badge/Version-0.2.1-blue.svg)](https://github.com/MahykBurak/quiz-app-vue)
 
 # Questionaire
 
@@ -17,9 +17,8 @@ Quastionaire is a quastion app which you can choose category and difficulty
 
 ## Install
 - `cd projectpath && npm install` (for installation )
-
+- `Write your GIPHY API to .env.sample file and rename it to .env`
 - `npm run serve` (for dev mode)
-
 - `npm run build` (for production mode)
 
 
@@ -27,5 +26,6 @@ Quastionaire is a quastion app which you can choose category and difficulty
 ## TODO List
 
 - [X] Fix unicode problem
-- [ ] Add result page with GIPYH API
+- [X] Add result page with GIPYH API
+- [ ] Add timer for questions 
 
