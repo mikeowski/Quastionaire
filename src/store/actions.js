@@ -22,9 +22,8 @@ export default {
   },
 
   finisher({ commit }, payload) {
-    let api_key = process.env.API_KEY
+    let api_key = process.env.VUE_APP_APIKEY
     let result = payload
-    console.log(process.env.API_KEY)
 
     const api = `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${result}&rating=pg-13&limit=10`
     fetch(api, {
