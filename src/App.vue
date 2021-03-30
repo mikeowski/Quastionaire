@@ -2,7 +2,7 @@
   <div id="app">
     <Welcome v-if="!isStart && !isFinished" />
     <Question v-if="isStart && !isFinished" :currentQuesitons="getQuestions" />
-    <result v-if='isFinished'/>
+    <result v-if="isFinished" />
   </div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
     Question,
     Welcome
   },
+
   computed: {
     ...mapState(['isStart', 'isFinished']),
     getQuestions() {
