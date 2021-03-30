@@ -11,7 +11,7 @@ export default {
   },
   finisher(state, payload) {
     state.gif = payload
-    let gitNumber = lodash.random(0, 10)
+    let gitNumber = lodash.random(0, 50)
     state.gifUrl = payload.data[gitNumber].images.downsized_medium.url
     state.isFinished = true
     console.log(state.gif.data[gitNumber], state.gifUrl)

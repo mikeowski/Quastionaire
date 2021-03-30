@@ -150,7 +150,7 @@ export default {
         ? (result = 'good-job')
         : correctAnswers >= qLength / 2
         ? (result = 'not-bad')
-        : (result = 'bad-job')
+        : (result = 'no-way')
       this.actionFinisher(result)
     }
   },

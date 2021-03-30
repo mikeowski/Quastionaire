@@ -122,7 +122,6 @@ export default {
     getGif() {
       let gifUrl
       gifUrl = this.gif.data[0].images.downsized_medium.url
-      console.log(gifUrl)
       return gifUrl
     }
   },
@@ -152,7 +151,7 @@ export default {
   color: #c81f1f;
 }
 .clickMessage {
-  color: #e06060;
+  color: #e53939;
   font-size: 1.5rem;
 }
 .img {
