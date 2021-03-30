@@ -74,7 +74,7 @@ export default {
   },
   data() {
     return {
-      currentIndex: 0,
+      currentIndex: 0
     }
   },
   components: {
@@ -84,7 +84,6 @@ export default {
   methods: {
     nextQuestion() {
       this.currentIndex++
-
     }
   }
 }
@@ -101,8 +100,6 @@ export default {
 .helloType {
   color: navajowhite;
 }
-
-
 
 .Question {
   background-color: #242c3a;

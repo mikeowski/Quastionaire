@@ -4,7 +4,7 @@
       <b-navbar class="header">
         <b-col class="text-center">
           <typical
-            v-if='$store.state.try == 0'
+            v-if="$store.state.try == 0"
             class="brandName"
             :steps="[
               1000,
@@ -17,7 +17,7 @@
             :wrapper="'h1'"
           ></typical>
           <typical
-            v-if='$store.state.try > 0'
+            v-if="$store.state.try > 0"
             class="brandName"
             :steps="[
               1000,

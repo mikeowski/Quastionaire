@@ -20,23 +20,23 @@
       <b-row>
         <b-col>
           <b-container>
-            <finisher/>
+            <finisher />
           </b-container>
         </b-col>
       </b-row>
       <b-row class="navBot" fixed="bottom">
         <b-nav>
           <b-col
-          ><b-link class="text-light" href="https://github.com/MahykBurak"
-          >My github page</b-link
-          >
+            ><b-link class="text-light" href="https://github.com/MahykBurak"
+              >My github page</b-link
+            >
           </b-col>
         </b-nav>
         <b-nav class="ml-auto" disabled
-        ><b-col class="text-right"
-        ><typical
-          class="helloType"
-          :steps="[
+          ><b-col class="text-right"
+            ><typical
+              class="helloType"
+              :steps="[
                 ' ',
                 500,
                 '{',
@@ -48,10 +48,10 @@
                 '{Made by Burak Mike ©}',
                 1000
               ]"
-          :loop="Infinity"
-          :wrapper="'div'"
-        ></typical
-        ></b-col>
+              :loop="Infinity"
+              :wrapper="'div'"
+            ></typical
+          ></b-col>
         </b-nav>
       </b-row>
     </b-container>

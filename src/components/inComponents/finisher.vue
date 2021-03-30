@@ -3,7 +3,7 @@
     <b-container
       ><flipper
         class="flipper"
-        height="500px"
+        height="480px"
         :flipped="flipped"
         @click="flip"
         style="margin: 50px auto"
@@ -12,23 +12,21 @@
           slot="back"
           style="
             background-color: #151a23;
-            height: 480px;
+            height: 350px;
             border-radius: 12px;
             padding: 15px 10px;
           "
         >
           <b-row align-h="center" style="text-align: center">
             <div style="width: 100%">
-              <h2
-                class="resultMessage"
-              >Check Your Results!</h2>
+              <h2 class="resultMessage">Check Your Results!</h2>
             </div>
           </b-row>
           <b-container class="mt-5 p-5">
-            <b-row style="text-align: center" class='mb-2'>
+            <b-row style="text-align: center" class="mb-2">
               <b-col>
                 <typical
-                  v-if='flipped'
+                  v-if="flipped"
                   class="correctAnswer"
                   :steps="[500, 'Correct Answers:']"
                   :wrapper="'div'"
@@ -42,7 +40,7 @@
             <b-row style="text-align: center">
               <b-col>
                 <typical
-                  v-if='flipped'
+                  v-if="flipped"
                   class="wrongAnswer"
                   :steps="[500, 'Wrong Answers:']"
                   :wrapper="'div'"
@@ -56,7 +54,7 @@
             <b-row style="text-align: center">
               <b-col>
                 <typical
-                  v-if='flipped'
+                  v-if="flipped"
                   class="passed"
                   :steps="[500, 'Passed Answers:']"
                   :wrapper="'div'"
@@ -67,17 +65,16 @@
           </b-container>
         </div>
 
-        <div slot="front" align='center'>
-          <b-container fluid='true' style='margin: auto; width: auto'>
-            <img  :src='$store.state.gifUrl' alt='Your Gif Baby' class='img'/>
+        <div slot="front" align="center">
+          <b-container fluid="true" style="margin: auto; width: auto">
+            <img :src="$store.state.gifUrl" alt="Your Gif Baby" class="img" />
           </b-container>
-
         </div>
       </flipper>
     </b-container>
-    <b-row align-h='center' class='mt-5 p-3'>
-      <b-container style='margin-bottom: 15px'>
-        <div style='width: auto; text-align: center;'>
+    <b-row align-h="center" class="mt-5 p-3">
+      <b-container style="margin-bottom: 15px">
+        <div style="width: auto; text-align: center">
           <typical
             class="clickMessage"
             :steps="[
@@ -92,19 +89,23 @@
           ></typical>
         </div>
       </b-container>
-      <b-button @click='$store.commit("reloader")' variant="outline-info">Try it Again!!!</b-button>
+      <b-button @click="$store.commit('reloader')" variant="outline-info"
+        >Try it Again!!! <ph-repeat :size="24"
+      /></b-button>
     </b-row>
   </div>
 </template>
 
 <script>
-import {mapState,mapMutations} from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 import Flipper from 'vue-flipper'
 import typical from 'vue-typical'
+import { PhRepeat } from 'phosphor-vue'
 export default {
   components: {
     Flipper,
-    typical
+    typical,
+    PhRepeat
   },
   data() {
     return {
@@ -112,19 +113,18 @@ export default {
       passed:
         this.$store.state.questions.length -
         (this.$store.state.correctAnswers + this.$store.state.wrongAnswers),
-      gifName:null,
+      gifName: null
     }
-
   },
-  computed:{
+  computed: {
     ...mapState(['gif']),
     ...mapMutations(['reloader']),
-    getGif(){
+    getGif() {
       let gifUrl
-      gifUrl= this.gif.data[0].images.downsized_medium.url
+      gifUrl = this.gif.data[0].images.downsized_medium.url
       console.log(gifUrl)
       return gifUrl
-}
+    }
   },
   methods: {
     flip() {
@@ -153,9 +153,9 @@ export default {
 }
 .clickMessage {
   color: #e06060;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
-.img{
+.img {
   margin: auto auto;
   max-width: 500px;
   max-height: 500px;
